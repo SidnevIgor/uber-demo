@@ -11,7 +11,6 @@ class LocationManager: NSObject, ObservableObject {
         locationManager.startUpdatingLocation()
     }
 }
-
 extension LocationManager: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard !locations.isEmpty else { return }

@@ -39,7 +39,7 @@ struct LocationSearchView: View {
                 VStack(alignment: .leading, content: {
                     ForEach(viewModel.results, id: \.self, content: { result in
                         LocationSearchResultCell(title: result.title, subtitle: result.subtitle).onTapGesture {
-                            viewModel.selectLocation(result.title)
+                            viewModel.selectLocation(result)
                             showLocationSearchView.toggle()
                         }
                     })

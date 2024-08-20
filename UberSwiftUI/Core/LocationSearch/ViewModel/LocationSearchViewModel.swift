@@ -22,7 +22,7 @@ class LocationSearchViewModel: NSObject, ObservableObject {
     func selectLocation(_ localSearch: MKLocalSearchCompletion) {
         locationSearch(forLocalSearchCompletion: localSearch, completion:  { response, error in
             if let error = error {
-                print("Could not get the coordinates")
+                print("Could not get the coordinates \(error)")
                 return
             }
             guard let item = response?.mapItems.first else { return }

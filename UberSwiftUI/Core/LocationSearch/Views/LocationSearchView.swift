@@ -39,8 +39,10 @@ struct LocationSearchView: View {
                 VStack(alignment: .leading, content: {
                     ForEach(viewModel.results, id: \.self, content: { result in
                         LocationSearchResultCell(title: result.title, subtitle: result.subtitle).onTapGesture {
-                            viewModel.selectLocation(result)
-                            mapState = .locationSelected
+                            withAnimation(.spring(), {
+                                viewModel.selectLocation(result)
+                                mapState = .locationSelected
+                            })
                         }
                     })
                 })

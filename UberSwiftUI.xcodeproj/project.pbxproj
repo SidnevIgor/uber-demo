@@ -19,6 +19,7 @@
 		47BE90052C482655005AF4B7 /* UberMapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BE90042C482655005AF4B7 /* UberMapViewRepresentable.swift */; };
 		47BE90072C4B9B60005AF4B7 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BE90062C4B9B60005AF4B7 /* LocationManager.swift */; };
 		47DDAC3A2C74F97F00021746 /* MapViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DDAC392C74F97F00021746 /* MapViewState.swift */; };
+		47DDAC3D2C7CBA3F00021746 /* RideRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DDAC3C2C7CBA3F00021746 /* RideRequestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		47BE90042C482655005AF4B7 /* UberMapViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UberMapViewRepresentable.swift; sourceTree = "<group>"; };
 		47BE90062C4B9B60005AF4B7 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		47DDAC392C74F97F00021746 /* MapViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewState.swift; sourceTree = "<group>"; };
+		47DDAC3C2C7CBA3F00021746 /* RideRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideRequestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 		47BE8FFC2C481E77005AF4B7 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				47DDAC3B2C7CBA1400021746 /* Trips */,
 				47903AB92C4BC838001A3A4F /* LocationSearch */,
 				47903AB82C4BC81F001A3A4F /* Home */,
 			);
@@ -177,6 +180,14 @@
 				47903ABE2C4BCED2001A3A4F /* MapViewActionButton.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		47DDAC3B2C7CBA1400021746 /* Trips */ = {
+			isa = PBXGroup;
+			children = (
+				47DDAC3C2C7CBA3F00021746 /* RideRequestView.swift */,
+			);
+			path = Trips;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,6 +263,7 @@
 				47903AC12C4BD1B2001A3A4F /* LocationSearchView.swift in Sources */,
 				47BE90072C4B9B60005AF4B7 /* LocationManager.swift in Sources */,
 				47903ABF2C4BCED2001A3A4F /* MapViewActionButton.swift in Sources */,
+				47DDAC3D2C7CBA3F00021746 /* RideRequestView.swift in Sources */,
 				47DDAC3A2C74F97F00021746 /* MapViewState.swift in Sources */,
 				474641A32C481C4300019BA3 /* UberSwiftUIApp.swift in Sources */,
 				47BE90052C482655005AF4B7 /* UberMapViewRepresentable.swift in Sources */,

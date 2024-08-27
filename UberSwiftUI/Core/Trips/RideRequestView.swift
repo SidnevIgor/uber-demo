@@ -72,13 +72,13 @@ struct RideRequestView: View {
                             VStack(alignment: .leading, spacing: 4) {
                                 Text(type.description)
                                     .font(.system(size: 14, weight: .semibold))
-                                    .foregroundColor(type == selectedRideType ? .white : .black)
+                                    .foregroundColor(type == selectedRideType ? .white : Color.theme.primaryTextColor)
                                 Text("$\(locationViewModel.computeRidePrice(forType: type).toCurrency())")
                                     .font(.system(size: 14, weight: .semibold))
-                                    .foregroundColor(type == selectedRideType ? .white : .black)
+                                    .foregroundColor(type == selectedRideType ? .white : Color.theme.primaryTextColor)
                             }.padding()
                         }.frame(width: 112, height: 140)
-                            .background(Color(type == selectedRideType ? .systemBlue : .systemGroupedBackground))
+                            .background(type == selectedRideType ? .blue : Color.theme.secondaryBackgroundColor)
                             .scaleEffect(type == selectedRideType ? 1.1 : 1.0)
                             .cornerRadius(10)
                             .onTapGesture {
@@ -109,7 +109,7 @@ struct RideRequestView: View {
                     .imageScale(.medium)
                     .padding()
             }).frame(height: 50)
-                .background(Color(.systemGroupedBackground))
+                .background(Color.theme.secondaryBackgroundColor)
                 .cornerRadius(10)
                 .padding(.horizontal)
             Button(action: {
@@ -124,7 +124,7 @@ struct RideRequestView: View {
             })
         }
         .padding(.bottom, 24)
-        .background(.white)
+        .background(Color.theme.backgroundColor)
         .cornerRadius(12)
     }
 }

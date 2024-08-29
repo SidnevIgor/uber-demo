@@ -18,26 +18,8 @@ struct LoginView: View {
                     .font(.largeTitle)
                 
                 VStack(spacing: 32) {
-                    VStack(alignment: .leading, spacing: 12) {
-                        Text("Email address")
-                            .foregroundColor(.white)
-                            .fontWeight(.semibold)
-                            .font(.footnote)
-                        TextField("name@example.com", text: $email)
-                            .foregroundColor(.white)
-                        Rectangle().foregroundColor(Color(.init(white: 1, alpha: 0.3)))
-                            .frame(width: UIScreen.main.bounds.width - 32, height: 0.7)
-                    }
-                    VStack(alignment: .leading, spacing: 12) {
-                        Text("Password")
-                            .foregroundColor(.white)
-                            .fontWeight(.semibold)
-                            .font(.footnote)
-                        TextField("Enter password", text: $password)
-                            .foregroundColor(.white)
-                        Rectangle().foregroundColor(Color(.init(white: 1, alpha: 0.3)))
-                            .frame(width: UIScreen.main.bounds.width - 32, height: 0.7)
-                    }
+                    CustomInputField(text: $email, title: "Email address", placeholder: "name@example.com")
+                    CustomInputField(text: $password, title: "Password", placeholder: "Enter password", isSecureField: true)
                     Button {} label: {
                         Text("Forgot password")
                             .font(.system(size: 13, weight: .semibold))

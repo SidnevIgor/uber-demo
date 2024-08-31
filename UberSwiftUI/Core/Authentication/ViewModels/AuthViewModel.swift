@@ -7,6 +7,7 @@ class AuthViewModel: ObservableObject {
     
     init() {
         userSession = Auth.auth().currentUser
+        fetchUser()
     }
     
     func registerUser(withEmail email: String, password: String, fullname: String) {
@@ -40,6 +41,21 @@ class AuthViewModel: ObservableObject {
             self.userSession = nil
         } catch {
             print("Error while signing out - \(error)")
+        }
+    }
+    
+    func fetchUser() {
+        guard let uid = self.userSession?.uid else { return }
+        print("uid: \(uid)")
+        Firestore.firestore().collection("users").document(uid).getDocument { result, error in
+            if let error = error {
+                print("Could not retrieve user from db \(error)")
+                return
+            } else {
+                guard let snapshot = result else { return }
+                guard let user = try? snapshot.data(as: User.self) else { return }
+                print("User: \(user)")
+            }
         }
     }
 }

@@ -1,5 +1,6 @@
 import Foundation
 import FirebaseAuth
+import FirebaseFirestore
 
 class AuthViewModel: ObservableObject {
     @Published var userSession: FirebaseAuth.User?
@@ -15,6 +16,10 @@ class AuthViewModel: ObservableObject {
                 return
             } else {
                 self.userSession = result?.user
+                guard let firebaseUser = result?.user else { return }
+                let user = User(fullname: fullname, email: email, uid: firebaseUser.uid)
+                guard let encodedUser = try? Firestore.Encoder().encode(user) else { return }
+                Firestore.firestore().collection("users").document(firebaseUser.uid).setData(encodedUser)
             }
         }
     }

@@ -18,7 +18,7 @@ struct SideMenuOptionView: View {
             Text(viewModel.title)
                 .font(.system(size: 16, weight: .semibold))
             Spacer()
-        }
+        }.foregroundColor(Color.theme.primaryTextColor)
     }
 }
 

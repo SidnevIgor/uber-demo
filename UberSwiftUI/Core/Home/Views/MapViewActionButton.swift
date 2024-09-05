@@ -2,6 +2,7 @@ import SwiftUI
 
 struct MapViewActionButton: View {
     @Binding var mapState: MapViewState
+    @Binding var showSideMenu: Bool
     @EnvironmentObject var viewModel: LocationSearchViewModel
     @EnvironmentObject var authModel: AuthViewModel
     
@@ -24,7 +25,7 @@ struct MapViewActionButton: View {
     func actionForState(_ state: MapViewState) {
         switch state {
         case .noInput:
-            break
+            showSideMenu.toggle()
         case .searchingForLocation:
             mapState = .noInput
         case .locationSelected, .polylineAdded:
@@ -39,12 +40,10 @@ struct MapViewActionButton: View {
             return "line.3.horizontal"
         case .searchingForLocation, .locationSelected, .polylineAdded:
             return "arrow.left"
-        default:
-            return "line.3.horizontal"
         }
     }
 }
 
 #Preview {
-    MapViewActionButton(mapState: .constant(.searchingForLocation))
+    MapViewActionButton(mapState: .constant(.searchingForLocation), showSideMenu: .constant(false))
 }
